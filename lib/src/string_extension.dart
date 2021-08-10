@@ -1,4 +1,13 @@
 extension StringExtension on String {
+  
+  bool get toBool => this.toLowerCase() == 'true';
+
+  DateTime? get toDateTime => DateTime.tryParse(this);
+
+  double? get toDouble => double.tryParse(this);
+
+  int? get toInt => int.tryParse(this);
+
   /// 字符串中间截取
   String ellipsis([int? length]) {
     if (isEmpty) return '';
