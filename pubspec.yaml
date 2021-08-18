@@ -1,7 +1,7 @@
 name: mini_extension
-description: A new Flutter project.
-version: 0.0.1
-homepage:
+description: Provide extension methods for common data types, especially for dateTime extensions.
+version: 2.0.0
+homepage: https://github.com/collectFlutter/mini_extension
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

@@ -1,4 +1,4 @@
-extension intExtension on int {
+extension IntExtension on int {
   String get fourDigits {
     int absN = this.abs();
     String sign = this < 0 ? "-" : "";
