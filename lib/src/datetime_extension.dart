@@ -20,35 +20,35 @@ extension DateTimeExtension on DateTime {
 
   /// 上月第一天
   ///
-  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29) 
+  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29)
   DateTime firstDayInPreviousMonth([int firstDay = 1]) {
     return lastDayInPreviousMonth(firstDay).firstDayInMonth(firstDay);
   }
 
   /// 上月最后一天
   ///
-  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29) 
+  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29)
   DateTime lastDayInPreviousMonth([int firstDay = 1]) {
     return firstDayInMonth(firstDay).subtract(Duration(days: 1));
   }
 
   /// 下月第一天
   ///
-  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29) 
+  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29)
   DateTime firstDayInNextMonth([int firstDay = 1]) {
     return lastDayInMonth(firstDay).add(Duration(days: 1));
   }
 
   /// 下月最后一天
   ///
-  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29) 
+  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29)
   DateTime lastDayInNextMonth([int firstDay = 1]) {
     return firstDayInNextMonth(firstDay).lastDayInMonth(firstDay);
   }
 
   /// 当月第一天
   ///
-  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29) 
+  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29)
   DateTime firstDayInMonth([int firstDay = 1]) {
     assert(firstDay > 0 && firstDay < 29);
     if (firstDay <= day) {
@@ -61,7 +61,7 @@ extension DateTimeExtension on DateTime {
 
   /// 当月最后一天
   ///
-  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29) 
+  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29)
   DateTime lastDayInMonth([int firstDay = 1]) {
     assert(firstDay > 0 && firstDay < 29);
     if (firstDay <= day) {
@@ -81,7 +81,7 @@ extension DateTimeExtension on DateTime {
 
   /// 当月总天数
   ///
-  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29) 
+  /// [firstDay] - 每月起算日期，assert(firstDay > 0 && firstDay < 29)
   int daysInMonth([int firstDay = 1]) =>
       ((lastDayInMonth(firstDay) - firstDayInMonth(firstDay)) / 86400000)
           .ceil();

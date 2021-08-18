@@ -2,8 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mini_extension/mini_extension.dart';
 
 void main() {
-
-
   test('string_extension', () {
     String str = "18516634912";
     assert(str.isPhone);

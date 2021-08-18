@@ -1,3 +1,1 @@
-extension MapExtension<K, V> on Map<K, V> {
-  
-}
+extension MapExtension<K, V> on Map<K, V> {}

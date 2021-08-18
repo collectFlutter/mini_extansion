@@ -1,5 +1,4 @@
 extension StringExtension on String {
-  
   bool get toBool => this.toLowerCase() == 'true';
 
   DateTime? get toDateTime => DateTime.tryParse(this);

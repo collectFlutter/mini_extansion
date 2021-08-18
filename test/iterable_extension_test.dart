@@ -1,14 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mini_extension/mini_extension.dart';
 
-import 'package:collection/collection.dart' as c;
-
 void main() {
-  test('collect', () {
-    List<int> _a = List.generate(100, (index) => index + 1);
-    List<int> _b = List.generate(100, (index) => index - 50);
-  });
-
   test("iterable", () {
     List<int> _list = List.generate(50, (index) => index + 1);
     print(_list.sublist(8, 10));

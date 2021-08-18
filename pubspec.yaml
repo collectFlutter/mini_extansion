@@ -1,6 +1,6 @@
 name: mini_extension
 description: Provide extension methods for common data types, especially for dateTime extensions.
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/collectFlutter/mini_extension
 
 environment:
