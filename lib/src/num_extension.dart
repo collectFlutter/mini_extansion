@@ -1,3 +1,4 @@
+/// 整数相关
 extension IntExtension on int {
   String get fourDigits {
     int absN = this.abs();

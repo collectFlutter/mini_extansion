@@ -2,8 +2,9 @@ export 'num_extension.dart';
 
 import 'dart:math';
 
-import 'package:mini_extension/src/_i18nModel.dart';
+import '_i18n_model.dart';
 
+/// 时间相关
 extension DateTimeExtension on DateTime {
   /// 是否是今天 [now] - 当前时间，默认DateTime.now()
   bool isToday([DateTime? now]) {
@@ -210,20 +211,24 @@ extension DateTimeExtension on DateTime {
   String getWeekShortStr([MiniLocalType localType = MiniLocalType.zh]) =>
       i18nObjInLocal(localType)['weekShortList'][weekday % 7];
 
+  /// 比较时间
   bool operator >=(DateTime other) =>
       this.millisecondsSinceEpoch >= other.millisecondsSinceEpoch;
 
+  /// 比较时间
   bool operator >(DateTime other) =>
       this.millisecondsSinceEpoch > other.millisecondsSinceEpoch;
 
+  /// 比较时间
   bool operator <=(DateTime other) =>
       this.millisecondsSinceEpoch <= other.millisecondsSinceEpoch;
 
+  /// 比较时间
   bool operator <(DateTime other) =>
       this.millisecondsSinceEpoch < other.millisecondsSinceEpoch;
 
-  int operator -(DateTime other) =>
-      this.millisecondsSinceEpoch - other.millisecondsSinceEpoch;
+  /// 计算差值
+  int operator -(DateTime other) => this.difference(other).inMilliseconds;
 
   String _fourDigits(int n) {
     int absN = n.abs();

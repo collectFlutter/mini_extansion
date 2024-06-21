@@ -1,3 +1,4 @@
+/// 字符串相关
 extension StringExtension on String {
   bool get toBool => this.toLowerCase() == 'true';
 
