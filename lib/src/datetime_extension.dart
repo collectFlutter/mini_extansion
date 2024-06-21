@@ -376,4 +376,26 @@ extension DateTimeExtension on DateTime {
     }
     return str;
   }
+
+  /// 获取最小时间
+  DateTime minDate(DateTime? other) {
+    return (other == null || isBefore(other)) ? this : other;
+  }
+
+  /// 获取最大时间
+  DateTime maxDate(DateTime? other) {
+    return (other == null || isAfter(other)) ? this : other;
+  }
+
+  /// 获取当前时间系统的本地时区
+  double getTimeZone() {
+    DateTime local = DateTime.now();
+    DateTime localUtc = local.toUtc();
+    DateTime nowUtc = DateTime.utc(local.year, local.month, local.day,
+        local.hour, local.minute, local.second);
+    DateTime utc = DateTime.utc(localUtc.year, localUtc.month, localUtc.day,
+        localUtc.hour, localUtc.minute, localUtc.second);
+    Duration d = nowUtc.difference(utc);
+    return d.inMinutes / 60.0;
+  }
 }
