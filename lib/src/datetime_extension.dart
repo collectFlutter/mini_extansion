@@ -205,9 +205,11 @@ extension DateTimeExtension on DateTime {
     return this.add(Duration(days: 7)).lastDayInWeek(firstWeekDay);
   }
 
+  /// 获取长日期
   String getWeekStr([MiniLocalType localType = MiniLocalType.zh]) =>
       i18nObjInLocal(localType)['weekList'][weekday % 7];
 
+  /// 获取短星期
   String getWeekShortStr([MiniLocalType localType = MiniLocalType.zh]) =>
       i18nObjInLocal(localType)['weekShortList'][weekday % 7];
 
@@ -275,6 +277,7 @@ extension DateTimeExtension on DateTime {
   /// 当年的总天数
   int get daysOfYear => isLeapYearByYear ? 366 : 365;
 
+  /// 复制对象
   DateTime copyWith(
           {int? year,
           int? month,
