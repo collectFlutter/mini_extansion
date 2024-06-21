@@ -2,7 +2,7 @@
 extension StringExtension on String {
   bool get toBool => this.toLowerCase() == 'true';
 
-  DateTime? get toDateTime => DateTime.tryParse(this);
+  DateTime? get toDateTime => DateTime.tryParse(getDateTimeStr());
 
   double? get toDouble => double.tryParse(this);
 
@@ -66,4 +66,23 @@ extension StringExtension on String {
   /// 是否是ip地址
   bool get isIp => hasMatch(
       "((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)");
+
+  /// 日期时间格式转换
+  String getDateStr() {
+    String temp = getDateTimeStr();
+    if (temp.length > 10) return temp.substring(0, 10);
+    return temp;
+  }
+
+  /// 获取日期时间中的时间
+  String getTimeStr() {
+    String temp = getDateTimeStr();
+    if (temp.length > 16) return temp.substring(11, 16);
+    return temp;
+  }
+
+  /// 日期时间格式转换
+  String getDateTimeStr() {
+    return this.replaceAll('/', '-').replaceAll('T', " ");
+  }
 }
